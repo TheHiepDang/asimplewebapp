@@ -61,7 +61,8 @@ mobileApp.controller(
             function loadMainHeaderItems() {
                 return MobileService.getMainHeaderItems().then(
                     function successHandler(successResponse) {
-                        MobilePageModel.setMainHeader(successResponse.data);
+                        if (successResponse.data.length)
+                            MobilePageModel.setMainHeader(successResponse.data);
                     },
                     function errorHandler(errorResponse) {
 
@@ -72,7 +73,8 @@ mobileApp.controller(
             function loadMainBanner() {
                 return MobileService.getMainBannerContent(MobilePageModel.pageType).then(
                     function successHandler(successResponse) {
-                        MobilePageModel.setMainBanner(successResponse.data);
+                        if (successResponse.data.length)
+                            MobilePageModel.setMainBanner(successResponse.data);
                     },
                     function errorHandler(errorResponse) {
 
@@ -83,7 +85,8 @@ mobileApp.controller(
             function loadTiles() {
                 return MobileService.getTilesWithPageType(MobilePageModel.pageType).then(
                     function successHandler(successResponse) {
-                        MobilePageModel.setTiles(successResponse.data);
+                        if (successResponse.data.length)
+                            MobilePageModel.setTiles(successResponse.data);
                     },
                     function errorHandler(errorResponse) {
 

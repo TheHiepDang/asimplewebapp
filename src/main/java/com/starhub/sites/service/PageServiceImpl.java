@@ -4,6 +4,7 @@ import com.starhub.sites.domain.Page;
 import com.starhub.sites.repository.PageRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.CollectionUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,9 +21,11 @@ public class PageServiceImpl implements PageService {
     @Override
     public List<String> getPageTypes() {
         List<String> pageTypes = new ArrayList<>();
-        for (Object page : pageRepository.findAll()) {
-            pageTypes.add(((Page) page).getPageType().getPageType());
-        }
+        List pages = pageRepository.findAll();
+        if (!CollectionUtils.isEmpty(pages))
+            for (Object page : pageRepository.findAll()) {
+                pageTypes.add(((Page) page).getPageType().getPageType());
+            }
         return pageTypes;
     }
 }

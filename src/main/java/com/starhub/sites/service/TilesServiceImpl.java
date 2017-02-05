@@ -22,7 +22,8 @@ public class TilesServiceImpl implements TilesService {
 
     @Override
     public List<TileDTO> getTileByPageType(String pageType) {
-        return tilesRepository.getByPageType(PageType.valueOf(pageType)).stream().map(Tile::toTileDTO).collect(Collectors.toList());
+        List<Tile> tiles = tilesRepository.getByPageType(PageType.valueOf(pageType));
+        return tiles.stream().filter(tile -> tile != null).map(Tile::toTileDTO).collect(Collectors.toList());
     }
 
     @Override

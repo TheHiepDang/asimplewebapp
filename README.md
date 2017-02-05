@@ -11,7 +11,7 @@ To run the app:
 - From cmd or git bash, type:  
 mvn clean install -Pw  
 (Or -Pl for Linux)  
-- then start the application from Application.java
+- then: mvn spring-boot:run
 - Open another cmd/git bash, type: http-server {path.to.project.dir}/fileUpload -a localhost -p 8000 --cors
 - Above command will open up a temp server that hosts the fileUpload folder which acts like a http server for file uploading. The
 app is now ready, go to: localhost:8080 to see the result. Again for the simplicity the pseudo server got a fixed port of 8000.

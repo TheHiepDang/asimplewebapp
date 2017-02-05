@@ -2,6 +2,7 @@ package com.starhub.sites.service;
 
 import com.starhub.sites.api.dto.MainBannerDTO;
 import com.starhub.sites.common.PageType;
+import com.starhub.sites.domain.MainBanner;
 import com.starhub.sites.repository.MainBannerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -25,6 +26,9 @@ public class MainBannerServiceImpl implements MainBannerService {
 
     @Override
     public MainBannerDTO getBannerByPageType(PageType pageType) {
-        return mainBannerRepository.getByPageID(pageType).toMainBannerDTO();
+        MainBanner mainBanner = mainBannerRepository.getByPageID(pageType);
+        if (mainBanner != null)
+            return mainBannerRepository.getByPageID(pageType).toMainBannerDTO();
+        return null;
     }
 }
