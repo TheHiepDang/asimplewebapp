@@ -1,0 +1,33 @@
+{"mainHeader":{
+    "url1": "#/Samsung1",
+    "url2": "#/Samsung2",
+    "url3": "#/Samsung3",
+    "url4": "#/Samsung4"
+},"mainBanner":{
+    "title": "Sets fire to the rain.",
+    "description": "Watch out.",
+    "backgroundIMGURL": "http://www.techarena.co.ke/wp-content/uploads/2014/09/bgd-banner.jpg",
+    "ctatext": "I have no id but it doesn't matter as I'm unique",
+    "ctaurl": "/#"
+},"tiles":[
+    {
+        "title": "Easy to catch fire",
+        "description": "changed Enjoy something",
+        "imageURL": "https://www.bhphotovideo.com/images/images2500x2500/samsung_g920f_32gb_blk_galaxy_s6_g920f_32gb_1147139.jpg",
+        "subtitles": "128MB",
+        "subtitles_2": "457",
+        "subtitles_3": "2G",
+        "ctatext": "changed",
+        "ctaurl": "changed"
+    },
+    {
+        "title": "But order should be maintained",
+        "description": "changed Get something",
+        "imageURL": "http://www.starhub.com/content/dam/onlinestore/cms-photos/store-sim-only-logo.jpg",
+        "subtitles": "Blah blah blah",
+        "subtitles_2": null,
+        "subtitles_3": null,
+        "ctatext": "changed",
+        "ctaurl": "changed"
+    }
+]}

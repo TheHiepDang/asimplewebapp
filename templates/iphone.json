@@ -1,0 +1,33 @@
+{"mainHeader":{
+    "url1": "#/1",
+    "url2": "#/2",
+    "url3": "#/should be 3",
+    "url4": "#/should be 4"
+},"mainBanner":{
+    "title": "Shoot perfectly changed ally.",
+    "description": "changed Share more with free data. Enjoy extra 3GB FREE for 6 months.",
+    "backgroundIMGURL": "http://telkomgaming.co.za/wp-content/uploads/2014/08/iPhone-5.jpg",
+    "ctatext": "I have no id but it doesn't matter as I'm unique",
+    "ctaurl": "/#"
+},"tiles":[
+    {
+        "title": "Nokia N95 that has no ID",
+        "description": "changed Enjoy something",
+        "imageURL": "http://i-cdn.phonearena.com/images/phones/6376-large/Nokia-N95-0.jpg",
+        "subtitles": "128MB",
+        "subtitles_2": "457",
+        "subtitles_3": "2G",
+        "ctatext": "changed",
+        "ctaurl": "changed"
+    },
+    {
+        "title": "But order should be maintained",
+        "description": "changed Get something",
+        "imageURL": "http://www.starhub.com/content/dam/onlinestore/cms-photos/store-sim-only-logo.jpg",
+        "subtitles": "Blah blah blah",
+        "subtitles_2": null,
+        "subtitles_3": null,
+        "ctatext": "changed",
+        "ctaurl": "changed"
+    }
+]}

@@ -25,7 +25,7 @@ public class StarhubPermissionEvaluator implements PermissionEvaluator {
     }
 
     protected boolean evaluate(Authentication authentication) {
-        User user = (User)authentication.getPrincipal();
+        User user = (User) authentication.getPrincipal();
         return false;
     }
 

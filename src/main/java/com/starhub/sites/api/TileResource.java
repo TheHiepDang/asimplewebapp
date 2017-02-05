@@ -6,5 +6,6 @@ import java.util.List;
 
 public interface TileResource {
     List<TileDTO> getTileByPageType(String pageType);
+
     void setTile(List<TileDTO> tileDTOs);
 }

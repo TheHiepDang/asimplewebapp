@@ -20,8 +20,8 @@ public class PageServiceImpl implements PageService {
     @Override
     public List<String> getPageTypes() {
         List<String> pageTypes = new ArrayList<>();
-        for(Object page : pageRepository.findAll()) {
-            pageTypes.add(((Page)page).getPageType().getPageType());
+        for (Object page : pageRepository.findAll()) {
+            pageTypes.add(((Page) page).getPageType().getPageType());
         }
         return pageTypes;
     }

@@ -7,7 +7,6 @@ import com.starhub.sites.repository.TilesRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -31,7 +30,7 @@ public class TilesServiceImpl implements TilesService {
         List<Tile> tiles = new ArrayList<>();
         /*Should be replaced by an enum that's bound to the DB's id in reality e.g (FIRST, SECOND, THIRD)*/
         int id = 1;
-        for(TileDTO tile : tileDTOs) {
+        for (TileDTO tile : tileDTOs) {
             tiles.add(tile.toTileDomain(id++));
         }
         tilesRepository.save(tiles);

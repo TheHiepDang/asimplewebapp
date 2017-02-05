@@ -2,6 +2,7 @@ package com.starhub.sites.domain;
 
 import com.starhub.sites.api.dto.MainBannerDTO;
 import com.starhub.sites.common.PageType;
+
 import javax.persistence.*;
 
 @Entity

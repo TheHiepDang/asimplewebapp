@@ -2,6 +2,7 @@ package com.starhub.sites.domain;
 
 import com.starhub.sites.api.dto.TileDTO;
 import com.starhub.sites.common.PageType;
+
 import javax.persistence.*;
 
 @Entity
@@ -27,7 +28,7 @@ public class Tile extends BaseDomain {
     @Column(name = "subtitles_3")
     private String subtitles_3;
 
-    public TileDTO toTileDTO(){
+    public TileDTO toTileDTO() {
         TileDTO tileDTO = new TileDTO();
         tileDTO.setCTAText(this.CTAText);
         tileDTO.setCTAURL(this.CTAURL);

@@ -22,9 +22,10 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
-import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.when;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 /**
  * Created by Hiep Dang on 2/5/2017.
@@ -33,6 +34,9 @@ import static org.mockito.Mockito.*;
 @SpringBootTest
 @AutoConfigureMockMvc
 public class MainBannerResourceTest {
+
+    public static final String API_STARHUB_MAIN_BANNER_SET_BANNER = "/api/starhub/mainBanner/setBanner";
+    public static final String API_STARHUB_MAIN_BANNER_PAGE_TYPE = "/api/starhub/mainBanner/{pageType}";
 
     @Autowired
     private MockMvc mockMvc;
@@ -63,7 +67,7 @@ public class MainBannerResourceTest {
     @Test
     @WithMockUser(roles = "ADMIN")
     public void testSetBannerShouldReturn200() throws Exception {
-        this.mockMvc.perform(post("/api/starhub/mainBanner/setBanner")
+        this.mockMvc.perform(post(API_STARHUB_MAIN_BANNER_SET_BANNER)
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(objectMapper.writeValueAsBytes(mainBannerDTO)))
                 .andExpect(status().isOk());
@@ -72,7 +76,7 @@ public class MainBannerResourceTest {
     @Test
     @WithMockUser(roles = "USER")
     public void testSetBannerShouldReturn403() throws Exception {
-        this.mockMvc.perform(post("/api/starhub/mainBanner/setBanner")
+        this.mockMvc.perform(post(API_STARHUB_MAIN_BANNER_SET_BANNER)
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(objectMapper.writeValueAsBytes(mainBannerDTO)))
                 .andExpect(status().isForbidden());
@@ -83,7 +87,7 @@ public class MainBannerResourceTest {
         when(mainBannerRepositoryMock.getByPageID(PageType.MOBILE))
                 .thenReturn(new MainBanner());
         when(mainBannerServiceMock.getBannerByPageType(PageType.MOBILE)).thenReturn(new MainBannerDTO());
-        this.mockedMockMvc.perform(get("/api/starhub/mainBanner/{pageType}", PageType.MOBILE.toString()))
+        this.mockedMockMvc.perform(get(API_STARHUB_MAIN_BANNER_PAGE_TYPE, PageType.MOBILE.toString()))
                 .andExpect(status().isOk());
     }
 }

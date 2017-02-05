@@ -12,5 +12,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface MainBannerRepository extends GenericRepository {
     @Query("FROM MainBanner mb WHERE mb.pageType = :pageType")
-    MainBanner getByPageID(@Param("pageType")PageType pageType);
+    MainBanner getByPageID(@Param("pageType") PageType pageType);
 }

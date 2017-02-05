@@ -1,16 +1,9 @@
 package com.starhub.sites.api;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.starhub.sites.api.dto.HeaderItemDTO;
-import com.starhub.sites.api.dto.MainBannerDTO;
-import com.starhub.sites.common.PageType;
 import com.starhub.sites.domain.HeaderItem;
-import com.starhub.sites.domain.MainBanner;
-import com.starhub.sites.repository.MainBannerRepository;
 import com.starhub.sites.repository.MainHeaderRepository;
-import com.starhub.sites.rest.MainBannerResourceImpl;
 import com.starhub.sites.rest.MainHeaderResourceImpl;
-import com.starhub.sites.service.MainBannerService;
 import com.starhub.sites.service.MainHeaderService;
 import org.junit.Before;
 import org.junit.Test;
@@ -30,7 +23,6 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.Assert.*;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
@@ -41,6 +33,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @AutoConfigureMockMvc
 public class MainHeaderResourceTest {
 
+    public static final String API_STARHUB_MAIN_HEADER_SET_HEADER = "/api/starhub/mainHeader/setHeader";
+    public static final String API_STARHUB_MAIN_HEADER = "/api/starhub/mainHeader";
     @Autowired
     private MockMvc mockMvc;
 
@@ -74,7 +68,7 @@ public class MainHeaderResourceTest {
     @Test
     @WithMockUser(roles = "ADMIN")
     public void testSetHeaderItemsShouldReturn200() throws Exception {
-        this.mockMvc.perform(post("/api/starhub/mainHeader/setHeader")
+        this.mockMvc.perform(post(API_STARHUB_MAIN_HEADER_SET_HEADER)
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(objectMapper.writeValueAsBytes(headerItems)))
                 .andExpect(status().isOk());
@@ -83,7 +77,7 @@ public class MainHeaderResourceTest {
     @Test
     @WithMockUser(roles = "USER")
     public void testSetHeaderItemsShouldReturn403() throws Exception {
-        this.mockMvc.perform(post("/api/starhub/mainHeader/setHeader")
+        this.mockMvc.perform(post(API_STARHUB_MAIN_HEADER_SET_HEADER)
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(objectMapper.writeValueAsBytes(headerItems)))
                 .andExpect(status().isForbidden());
@@ -94,7 +88,7 @@ public class MainHeaderResourceTest {
         when(mainHeaderRepositoryMock.findAll())
                 .thenReturn(new ArrayList());
         when(mainHeaderServiceMock.getMainHeaderItems()).thenReturn(new ArrayList<>());
-        this.mockedMockMvc.perform(get("/api/starhub/mainHeader"))
+        this.mockedMockMvc.perform(get(API_STARHUB_MAIN_HEADER))
                 .andExpect(status().isOk());
     }
 }

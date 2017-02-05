@@ -41,7 +41,9 @@ public class PageResourceImpl implements PageResource {
 
     @RequestMapping(value = "/upload", headers = "content-type=multipart/*", method = RequestMethod.POST)
     @PreAuthorize("hasRole('ROLE_ADMIN')")
-    public @ResponseBody String upload(@RequestParam("file") MultipartFile file) {
+    public
+    @ResponseBody
+    String upload(@RequestParam("file") MultipartFile file) {
         return fileService.upload(file);
     }
 }

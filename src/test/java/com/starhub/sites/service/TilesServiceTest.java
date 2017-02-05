@@ -2,7 +2,6 @@ package com.starhub.sites.service;
 
 import com.starhub.sites.api.dto.TileDTO;
 import com.starhub.sites.common.PageType;
-import com.starhub.sites.service.TilesService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest

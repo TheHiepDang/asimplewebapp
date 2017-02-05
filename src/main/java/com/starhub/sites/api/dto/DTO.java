@@ -1,8 +1,10 @@
 package com.starhub.sites.api.dto;
 
-import java.io.Serializable;
 import net.logstash.logback.encoder.org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
+
+import java.io.Serializable;
+
 /**
  * Created by Hiep Dang on 1/26/2017.
  */

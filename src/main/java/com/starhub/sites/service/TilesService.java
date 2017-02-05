@@ -1,7 +1,6 @@
 package com.starhub.sites.service;
 
 import com.starhub.sites.api.dto.TileDTO;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 
@@ -10,5 +9,6 @@ import java.util.List;
  */
 public interface TilesService {
     List<TileDTO> getTileByPageType(String pageType);
+
     void setTiles(List<TileDTO> tileDTOs);
 }
