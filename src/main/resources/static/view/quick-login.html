@@ -1,0 +1,12 @@
+<form class="top-small" name='f' action='/api/starhub/authenticate' method='POST'
+      data-ng-class="{'.admin-mode':canShow.isAdmin(), '.ano-mode':!canShow.isAdmin()}">
+
+    <input type='hidden' name='username' value='admin'>
+
+    <input type='hidden' name='password' value='password'/>
+
+    <input class="btn btn-primary" data-ng-show="!canShow.isAdmin()" name="submit" type="submit" value="Make me admin"/>
+    <a  data-ng-show="canShow.isAdmin()" data-ng-click="clickHandler.logout()" target="_blank">
+        <button class="btn btn-danger">Make me anonymous</button>
+    </a>
+</form>

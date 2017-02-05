@@ -1,0 +1,108 @@
+<div class="content-grid">
+    <div class="primary-column">
+        <div class="par parsys">
+            <div class="masonryTilesPromotion section">
+                <div class="content-grid" data-ng-class="{'template-div':tilesModel.isDirty() && canShow.isAdmin()}" style="display: inline-block;">
+                    <button data-ng-click="clickHandler.saveTilesTemplate()" data-ng-show="tilesModel.isDirty()" type="button" class="btn btn-success">KEEP & PERSIST</button>
+                    <button data-ng-click="clickHandler.discardTilesTemplate()" data-ng-show="tilesModel.isDirty()" type="button" class="btn btn-danger">DISCARD</button>
+                    <div class="primary-column">
+                        <div class="tiles product-list tiles-grid-3 e-store-2-0">
+                            <div class="cell21 cell" style="height: 527px;">
+                                <div class="inner">
+                                    <div class="cell-product-type">
+                                    </div>
+                                    <div class="cell-product-img">
+                                        <a href="#" class="link-wrap">
+                                            <img src="{{tilesModel.tiles[0][0].imageURL}}" alt="iPhone 7 Plus"
+                                                 onload="">
+                                        </a>
+                                    </div>
+                                    <div class="cell-product-desc">
+                                        <div class="inner">
+                                            <div class="inner-info">
+                                                <div class="info-basic">
+                                                    <div class="product-name">
+                                                        <span class="model-name">{{tilesModel.tiles[0][0].title}}</span>
+                                                        <div class="model-desc">{{tilesModel.tiles[0][0].subtitles}}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="info-focus">
+                                                    <div class="info-focus-inner">
+                                                        <div class="product-price">
+
+                                                            <small class="currency-symbol">$</small>
+                                                            <span class="price">{{tilesModel.tiles[0][0].subtitles_2}}</span>
+
+
+                                                        </div>
+                                                        <div class="notes">on <span class="blue product-highlight">{{tilesModel.tiles[0][0].subtitles_3}}</span>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="info-promo-box-container">
+                                                        <div class="product-promo-box">
+                                                            <h5>{{tilesModel.tiles[0][0].description}}</h5>
+
+                                                            <p class="grid-footer"></p>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                            <a href="{{tilesModel.tiles[0][0].ctaurl}}"
+                                               class="btn-secondaryGreen-rarrow btn-view-details" title="Buy Now">{{tilesModel.tiles[0][0].ctatext}}<span
+                                                    class="icon"></span></a>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cell11 cell" style="height: 527px;">
+                                <div class="inner">
+                                    <div class="cell-product-type">
+                                    </div>
+                                    <div class="cell-product-img">
+                                        <a href="#" class="link-wrap">
+                                            <img src="{{tilesModel.tiles[0][1].imageURL}}" alt="SIM Only Plans ">
+                                        </a>
+                                    </div>
+                                    <div class="cell-product-desc">
+                                        <div class="inner">
+                                            <div class="inner-info">
+                                                <div class="info-basic">
+                                                    <div class="product-name">
+                                                        <span class="model-name">{{tilesModel.tiles[0][1].title}}</span>
+                                                        <div class="model-desc">{{tilesModel.tiles[0][1].description}}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="info-focus">
+                                                    <div class="info-focus-inner">
+                                                        <div class="product-price">
+
+
+                                                        </div>
+                                                        <div class="notes"><span class="blue product-highlight"></span>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                            <a href="{{tilesModel.tiles[0][1].ctaurl}}"
+                                               class="btn-secondaryGreen-rarrow btn-view-details" title="Buy Now">{{tilesModel.tiles[0][1].ctatext}}<span
+                                                    class="icon"></span></a>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

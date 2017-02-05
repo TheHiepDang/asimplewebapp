@@ -1,0 +1,31 @@
+<header class="global header">
+    <div class="header-container">
+        <div id="logo" class="logo">
+            <a href="http://www.starhub.com">
+                <img src="http://www.starhub.com/etc/designs/starhub/clientlibs/img/logo-starhub.png" alt="StarHub">
+            </a>
+        </div>
+    </div>
+</header>
+<div class="main-menu">
+    <div class="inner">
+        <div class="topnavigation section">
+            <nav class="main-nav">
+                <ul data-ng-init="selectedTab = 'mobile'">
+                    <li data-ng-class="{'selected':selectedTab === 'mobile'}" data-ng-click="selectedTab = 'mobile'">
+                        <a href="/#/api/starhub/mobile">Mobile</a>
+                        <ul class="horizontal-menu"></ul>
+                    </li>
+                    <li data-ng-class="{'selected':selectedTab === 'business'}" data-ng-click="selectedTab = 'business'">
+                        <a href="/#">Business</a>
+                        <ul class="horizontal-menu"></ul>
+                    </li>
+                    <li data-ng-class="{'selected':selectedTab === 'about'}" data-ng-click="selectedTab = 'about'">
+                        <a href="/#">About Us</a>
+                        <ul class="horizontal-menu"></ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>

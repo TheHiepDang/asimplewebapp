@@ -1,0 +1,83 @@
+<div id="header" data-ng-include src="'view/pages/mobile/adminPanel.html'">
+    Tabs, and stuffs
+</div>
+<div class="full-main clearfix">
+    <div class="content-grid">
+        <ul class="breadcrumb clearfix">
+            <li class="first"><span>You are in</span></li>
+            <li><a href="/content/starhub/en/personal.html">Personal</a></li>
+            <li class="prev"><a href="/content/starhub/en/personal/store.html">Store</a></li>
+            <li class="last"><span>Mobile</span></li>
+        </ul>
+    </div>
+    <div class="head-grid">
+        <div class="top-navigation-store">
+            <div class="content-grid">
+                <div class="nav-tabs-track" data-ng-class="{'template-div':mainHeaderModel.isDirty() && canShow.isAdmin()}">
+                    <button data-ng-click="clickHandler.saveMainHeaderTemplate()" data-ng-show="mainHeaderModel.isDirty()" type="button" class="btn btn-success">KEEP & PERSIST</button>
+                    <button data-ng-click="clickHandler.discardMainHeaderTemplate()" data-ng-show="mainHeaderModel.isDirty()" type="button" class="btn btn-danger">DISCARD</button>
+                    <ul class="nav nav-tabs multi-tabs with-highlight " data-tab-active="6" data-ng-init="selectedTab = 'mobile'">
+                        <li class="item-1" data-ng-class="{'active':selectedTab === 'mobile'}" data-ng-click="selectedTab = 'mobile'">
+                            <a href="{{mainHeaderModel.url1}}" title="Mobile">
+
+                                <div class="tab-img-bg"
+                                     style="background-image: url('http://www.starhub.com/content/dam/onlinestore/cms-photos/icon-store-mobile.png');"></div>
+
+
+                                <div class="tab-copy">
+                                    Shop for <h4 class="text-green">Mobile</h4>
+                                </div>
+                            </a>
+                            <span class="marker"></span>
+                        </li>
+
+
+                        <li class="item-2" data-ng-class="{'active':selectedTab === 'broad'}" data-ng-click="selectedTab = 'broad'">
+                            <a href="{{mainHeaderModel.url2}}" title="Broadband">
+
+                                <div class="tab-img-bg"
+                                     style="background-image: url('http://www.starhub.com/content/dam/onlinestore/cms-photos/icon-store-broadband.png');"></div>
+
+
+                                <div class="tab-copy">
+                                    Shop for <h4 class="text-green">Broadband</h4>
+                                </div>
+                            </a>
+                            <span class="marker"></span>
+                        </li>
+
+
+                        <li class="item-3" data-ng-class="{'active':selectedTab === 'TV'}" data-ng-click="selectedTab = 'TV'">
+                            <a href="{{mainHeaderModel.url3}}" title="TV">
+
+                                <div class="tab-img-bg"
+                                     style="background-image: url('http://www.starhub.com/content/dam/onlinestore/cms-photos/icon-store-tv.png');"></div>
+
+
+                                <div class="tab-copy">
+                                    Shop for <h4 class="text-green">TV</h4>
+                                </div>
+                            </a>
+                            <span class="marker"></span>
+                        </li>
+                        <li class="item-4" data-ng-class="{'active':selectedTab === 'home'}" data-ng-click="selectedTab = 'home'">
+                            <a href="{{mainHeaderModel.url4}}" title="Homehub">
+
+                                <div class="tab-img-bg"
+                                     style="background-image: url('http://www.starhub.com/content/dam/onlinestore/cms-photos/icon-store-hubbing.png');"></div>
+
+
+                                <div class="tab-copy">
+                                    Shop for <h4 class="text-green">Homehub</h4>
+                                </div>
+                            </a>
+                            <span class="marker"></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="mainBanner" data-ng-include src="'view/pages/mobile/mainBanner.html'">
+        </div>
+    </div>
+</div>

@@ -1,0 +1,8 @@
+<div data-ng-show="canShow.isAdmin()" class="absolute-top-right one-liner one-above-all">
+    <a data-ng-href="data:text/json;charset=utf-8,{{encodeJson()}}" download="starhub_mobile_page_template.json">
+        <input class="btn btn-primary" type="button" value="Download current template">
+    </a><label class="btn btn-info file-container">
+    OR upload a new template file
+    <input type="file" starhub-file="myFile" name="file" class="btn btn-default"/></label>
+    <button type="button" data-ng-click="clickHandler.saveTemplate()" class="btn btn-danger" data-ng-show="canShow.templateMode()">Make view permanent</button>
+</div>

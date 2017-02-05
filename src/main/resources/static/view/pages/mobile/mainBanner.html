@@ -1,0 +1,92 @@
+<div class="singlebannerwide" data-ng-class="{'template-div':mainBannerModel.isDirty() && canShow.isAdmin()}">
+    <button data-ng-click="clickHandler.saveMainBannerTemplate()" data-ng-show="mainBannerModel.isDirty()" type="button" class="btn btn-success">KEEP & PERSIST</button>
+    <button data-ng-click="clickHandler.discardMainBannerTemplate()" data-ng-show="mainBannerModel.isDirty()" type="button" class="btn btn-danger">DISCARD</button>
+    <div class="mobile-store-revamp phone-listing-pg">
+        <div class="cbg">
+            <div class="main-content">
+                <div class="begin-content bg-light-grey">
+                    <div class="main-graphic backstretch large with-diagonal onclick-current-promo marginTop5">
+                        <div class="desktop-masthead container-fluid container-bxslider visible-lg visible-md visible-sm">
+                            <div class="bx-wrapper" style="max-width: 100%; margin: 0px auto;">
+                                <div class="bx-viewport" aria-live="polite"
+                                     style="width: 100%; overflow: hidden; position: relative; height: 400px;">
+                                    <ul class="bxslider" pager="true" auto="false"
+                                        style="width: auto; position: relative;">
+                                        <li style="float: none; list-style: none; position: absolute; width: 1349px; z-index: 50; display: block; background: none;"
+                                            aria-hidden="false">
+                                            <div class="mastheadSmTitle">
+                                                <div class="hero-absolute">
+                                                    <div class="hero">
+                                                        <div class="container">
+                                                            <div class="row">
+                                                                <div class="col-md-24">
+                                                                    <i><span><span>{{mainBannerModel.title}}</span></span></i>
+                                                                </div>
+                                                                <div class="col-md-12 mastheadContent"
+                                                                     style="height: 108px;"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="hero-absolute">
+                                                    <div class="hero blend">
+                                                        <div class="container">
+                                                            <div class="row">
+                                                                <div class="col-md-24">
+                                                                    <i><span style="border-left: 5px solid #50870a;"><span>{{mainBannerModel.title}}</span></span></i>
+                                                                </div>
+                                                                <div class="col-md-12 mastheadContent"
+                                                                     style="height: 108px;"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- Blend Extend -->
+                                                <div class="blend-extend">
+                                                    <div class="extend">
+                                                        <div class="container">
+                                                            <div class="row">
+                                                                <div class="col-md-24 ex">
+                                                                    <span style="border: none;">{{mainBannerModel.title}}</span>
+                                                                </div>
+                                                                <div class="col-md-12 mastheadContent-master">
+                                                                    <div class="mastheadDesc light">
+                                                                        <p></p>
+                                                                        <p>{{mainBannerModel.description}}</p>
+                                                                        <p></p>
+                                                                    </div>
+                                                                    <div class="paddingTop10">
+                                                                        <a href="{{mainBannerModel.ctaurl}}"
+                                                                           class="btn btn-sec btn-dark-grey text-dark-grey">{{mainBannerModel.ctatext}}<img
+                                                                                class="btn-arrow-black"
+                                                                                src="http://www.starhub.com/etc/designs/starhub/clientlibs/img/empty.gif"
+                                                                                alt=""></a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- backstretch -->
+                                                <img class="bs-src"
+                                                     src="{{mainBannerModel.backgroundIMGURL}}"
+                                                     alt="">
+                                            </div>
+                                            <div class="backstretch"
+                                                 style="left: 0px; top: 0px; overflow: hidden; margin: 0px; padding: 0px; height: 400px; width: 1349px; z-index: -999998; position: absolute;">
+                                                <img src="{{mainBannerModel.backgroundIMGURL}}"
+                                                     style="position: absolute; margin: 0px; padding: 0px; border: none; width: 1401.05px; height: 400px; max-height: none; max-width: none; z-index: -999999; left: -26.0254px; top: 0px;">
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Diagonal White-->
+                        <div class="diagonal grey-right visible-lg visible-md visible-sm"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
