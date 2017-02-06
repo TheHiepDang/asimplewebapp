@@ -18,3 +18,4 @@ app is now ready, go to: localhost:8080 to see the result. Again for the simplic
 - By default the page would mostly be empty as the DB is fresh. Please click: Make me admin on top right of the page to 
 enable Admin panel which allows you to upload/download a template. You can use one of the template provided inside the /templates folder
 to see immediate result.
+//Added simple java doc
