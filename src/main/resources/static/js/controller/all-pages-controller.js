@@ -11,9 +11,9 @@ angular.module(
         'MobileService',
         function ($rootScope, $scope, UserContextModel, UtilService, MobileService) {
 
-            loadCurrentUserAuth();
+            _loadCurrentUserAuth();
 
-            function loadCurrentUserAuth() {
+            function _loadCurrentUserAuth() {
                 return MobileService.getCurrentUserAuth().then(
                     function successHandler(successResponse) {
                         UserContextModel.populateFromJSON(successResponse.data);

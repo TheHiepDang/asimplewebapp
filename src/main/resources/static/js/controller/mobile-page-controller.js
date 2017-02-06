@@ -42,9 +42,9 @@ mobileApp.controller(
             $scope.mainBannerModel = MainBannerModel;
             $scope.tilesModel = TileModel;
             function initialise() {
-                loadMainHeaderItems();
-                loadMainBanner();
-                loadTiles();
+                _loadMainHeaderItems();
+                _loadMainBanner();
+                _loadTiles();
             }
 
             $scope.$on('newTemplateBroadcast', function () {
@@ -58,7 +58,7 @@ mobileApp.controller(
                 );
             });
 
-            function loadMainHeaderItems() {
+            function _loadMainHeaderItems() {
                 return MobileService.getMainHeaderItems().then(
                     function successHandler(successResponse) {
                         if (successResponse.data.length)
@@ -70,7 +70,7 @@ mobileApp.controller(
                 );
             }
 
-            function loadMainBanner() {
+            function _loadMainBanner() {
                 return MobileService.getMainBannerContent(MobilePageModel.pageType).then(
                     function successHandler(successResponse) {
                         if (successResponse.data.length)
@@ -82,7 +82,7 @@ mobileApp.controller(
                 );
             }
 
-            function loadTiles() {
+            function _loadTiles() {
                 return MobileService.getTilesWithPageType(MobilePageModel.pageType).then(
                     function successHandler(successResponse) {
                         if (successResponse.data.length)
@@ -94,45 +94,45 @@ mobileApp.controller(
                 );
             }
 
-            function persistMainHeaderTemplate() {
+            function _saveMainHeaderTemplate() {
                 return MobileService.setMainHeaderItems($scope.mainHeaderModel.getDTO()).then(
                     function successHandler() {
-                        loadMainHeaderItems();
+                        _loadMainHeaderItems();
                         $scope.mainHeaderModel.cleanse();
                     }
                 );
             }
 
-            function reloadMainHeaderTemplate() {
-                loadMainHeaderItems();
+            function _discardMainHeaderTemplate() {
+                _loadMainHeaderItems();
                 $scope.mainHeaderModel.cleanse();
             }
 
-            function persistMainBannerTemplate() {
+            function _saveMainBannerTemplate() {
                 return MobileService.setMainBannerContent($scope.mainBannerModel).then(
                     function successHandler() {
-                        loadMainBanner();
+                        _loadMainBanner();
                         $scope.mainBannerModel.cleanse();
                     }
                 );
             }
 
-            function reloadMainBannerTemplate() {
-                loadMainBanner();
+            function _discardMainBannerTemplate() {
+                _loadMainBanner();
                 $scope.mainBannerModel.cleanse();
             }
 
-            function persistTilesTemplate() {
+            function _saveTilesTemplate() {
                 return MobileService.setTiles($scope.tilesModel.getDTO()).then(
                     function successHandler() {
-                        loadTiles();
+                        _loadTiles();
                         $scope.tilesModel.cleanse();
                     }
                 );
             }
 
-            function reloadTilesTemplate() {
-                loadTiles();
+            function _discardTilesTemplate() {
+                _loadTiles();
                 $scope.tilesModel.cleanse();
             }
 
@@ -143,21 +143,21 @@ mobileApp.controller(
             };
 
             $scope.clickHandler = {
-                saveMainHeaderTemplate: persistMainHeaderTemplate,
-                discardMainHeaderTemplate: reloadMainHeaderTemplate,
-                saveMainBannerTemplate: persistMainBannerTemplate,
-                discardMainBannerTemplate: reloadMainBannerTemplate,
-                saveTilesTemplate: persistTilesTemplate,
-                discardTilesTemplate: reloadTilesTemplate,
+                saveMainHeaderTemplate: _saveMainHeaderTemplate,
+                discardMainHeaderTemplate: _discardMainHeaderTemplate,
+                saveMainBannerTemplate: _saveMainBannerTemplate,
+                discardMainBannerTemplate: _discardMainBannerTemplate,
+                saveTilesTemplate: _saveTilesTemplate,
+                discardTilesTemplate: _discardTilesTemplate,
                 saveTemplate: function () {
                     if ($scope.mainHeaderModel.isDirty()) {
-                        persistMainHeaderTemplate();
+                        _saveMainHeaderTemplate();
                     }
                     if ($scope.mainBannerModel.isDirty()) {
-                        persistMainBannerTemplate();
+                        _saveMainBannerTemplate();
                     }
                     if ($scope.tilesModel.isDirty()) {
-                        persistTilesTemplate();
+                        _saveTilesTemplate();
                     }
                 }
             };

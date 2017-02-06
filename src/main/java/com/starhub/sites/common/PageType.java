@@ -1,5 +1,8 @@
 package com.starhub.sites.common;
 
+/**
+ * App's page type
+ */
 public enum PageType {
     MOBILE("MOBILE"),
     MISC("MISC");
