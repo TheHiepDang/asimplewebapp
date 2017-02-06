@@ -136,6 +136,18 @@ mobileApp.controller(
                 $scope.tilesModel.cleanse();
             }
 
+            function _saveTemplate() {
+                if ($scope.mainHeaderModel.isDirty()) {
+                    _saveMainHeaderTemplate();
+                }
+                if ($scope.mainBannerModel.isDirty()) {
+                    _saveMainBannerTemplate();
+                }
+                if ($scope.tilesModel.isDirty()) {
+                    _saveTilesTemplate();
+                }
+            }
+
             $scope.encodeJson = function () {
                 return encodeURIComponent("{\"mainHeader\"" + ":" + JSON.stringify($scope.mainHeaderModel.getJSONFromObject(), null, "    ") + ","
                     + "\"mainBanner\"" + ":" + JSON.stringify($scope.mainBannerModel.getJSONFromObject(), null, "    ") + ","
@@ -149,17 +161,7 @@ mobileApp.controller(
                 discardMainBannerTemplate: _discardMainBannerTemplate,
                 saveTilesTemplate: _saveTilesTemplate,
                 discardTilesTemplate: _discardTilesTemplate,
-                saveTemplate: function () {
-                    if ($scope.mainHeaderModel.isDirty()) {
-                        _saveMainHeaderTemplate();
-                    }
-                    if ($scope.mainBannerModel.isDirty()) {
-                        _saveMainBannerTemplate();
-                    }
-                    if ($scope.tilesModel.isDirty()) {
-                        _saveTilesTemplate();
-                    }
-                }
+                saveTemplate: _saveTemplate
             };
 
             $scope.canShow = {
