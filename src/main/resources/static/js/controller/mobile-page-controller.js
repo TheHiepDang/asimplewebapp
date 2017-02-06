@@ -73,7 +73,7 @@ mobileApp.controller(
             function _loadMainBanner() {
                 return MobileService.getMainBannerContent(MobilePageModel.pageType).then(
                     function successHandler(successResponse) {
-                        if (successResponse.data.length)
+                        if (successResponse.data !== 'unidefined')
                             MobilePageModel.setMainBanner(successResponse.data);
                     },
                     function errorHandler(errorResponse) {
