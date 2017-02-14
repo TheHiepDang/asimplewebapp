@@ -1,0 +1,30 @@
+{
+  "name": "asimplewebapp",
+  "version": "1.0.0",
+  "description": "In order to run this locally, you should have following plugins installed (globally or inside the project root folder if locally):  \r - nodejs\r - bower\r - http-server (https://www.npmjs.com/package/http-server)\r - maven",
+  "main": "app.js",
+  "devDependencies": {
+    "angular": "^1.6.1",
+    "angular-mocks": "^1.6.1",
+    "jasmine-core": "^2.5.2",
+    "karma": "^1.4.1",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-firefox-launcher": "^1.0.0",
+    "karma-ie-launcher": "^1.0.0",
+    "karma-jasmine": "^1.1.0",
+    "karma-script-launcher": "^1.0.0"
+  },
+  "scripts": {
+    "test": "karma start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheHiepDang/asimplewebapp.git"
+  },
+  "author": "HiepDang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TheHiepDang/asimplewebapp/issues"
+  },
+  "homepage": "https://github.com/TheHiepDang/asimplewebapp#readme"
+}
